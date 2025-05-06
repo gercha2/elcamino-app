@@ -7,11 +7,11 @@
     <title>Chatbot</title>
     <meta name="author" content="J.C. Chen">
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
     <!-- <link rel="shortcut icon" href='favicon.ico' type="image/x-icon">
     <link rel="icon" href='favicon.ico' type="image/x-icon"> -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
   </head>
   <!--end general information-->
   <body>
@@ -41,7 +41,11 @@
     <!--end chatbot container-->
 
     <!--Javascript to call the language model-->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="/static/script.js">
+      ws.open = function() {
+        console.log("WebSocket connection opened.");
+      };
+    </script>
     <!--end Javascript to call the language model-->
   </body>
 </html>
